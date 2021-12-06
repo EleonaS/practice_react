@@ -129,7 +129,9 @@ const [text,setText]=
 const [isLoading,setIsLoading]=    
   useState(false)
 
-useEffect(() => {
+  useEffect(() => {
+  
+    
         setIsLoading(true);
         api.getFilms(page)
             .then(({ data }) => {
