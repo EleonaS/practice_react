@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { StyledOverlay, Text } from './Overlay.styled'
-const Overlay = ({ text, onClick }) => {
+import { StyledOverlay } from './Overlay.styled'
+const Overlay = ({ img, onClick }) => {
   
   useEffect(() => {
     window.addEventListener('keydown', overlayClose);
@@ -16,7 +16,7 @@ const Overlay = ({ text, onClick }) => {
   }
   return (
   <StyledOverlay onClick={onClick}>
-  <Text>{text}</Text>
+  <img src={`https://image.tmdb.org/t/p/w780/${img}`} alt=""/>
   
 </StyledOverlay>);
 

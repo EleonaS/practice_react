@@ -110,7 +110,7 @@ export default App;
 
 //------------hooks-----------//
 
-import {useState, useEffect } from 'react';
+/*import {useState, useEffect } from 'react';
 //import movies from './data/films.json';
 import filterMovies from './helpers/filterArr';
 import FilmsList from './components/FilmsList/FilmsList';
@@ -124,14 +124,14 @@ export default function App  (){
 const [page,setPage ]= useState(1)
 const [movies,setMovies]=  
   useState([])
-const [text,setText]=  
+const [img,setImg]=  
   useState('')
 const [isLoading,setIsLoading]=    
   useState(false)
 
   useEffect(() => {
   
-    
+
         setIsLoading(true);
         api.getFilms(page)
             .then(({ data }) => {
@@ -159,7 +159,7 @@ const [isLoading,setIsLoading]=
       .finally(() => setIsLoading(false));
      };
 */
-  const handleClick = () => {
+  /*const handleClick = () => {
    
     setPage( prevPage => prevPage + 1 );
   
@@ -168,9 +168,9 @@ const [isLoading,setIsLoading]=
 
   
 
-  const handleItemClick = text => setText( text );
+  const handleItemClick = img => setImg( img );
 
-  const handleCloseOverlay = () =>  setText('');
+  const handleCloseOverlay = () =>  setImg('');
   
   const handleChangeStatus = id => {
 
@@ -204,9 +204,27 @@ const [isLoading,setIsLoading]=
           }
         </Container>
         {isLoading && <Loader/> }
-        {text && <Overlay text={text} onClick={handleCloseOverlay} />}
+        {img && <Overlay img={img} onClick={handleCloseOverlay} />}
       </>);
 
-  }
+  }*/
 
 
+import { Route, Switch,Redirect } from "react-router-dom"
+import FilmsPage from './views/FilmsPage'
+import FilmDetails from "./views/FilmDetails"
+
+function App() {
+  return (
+    <Switch>
+      <Route path="/films" exact=''>
+        <FilmsPage />
+      </Route>
+      <Route path="/films/:filmId">
+        <FilmDetails />
+      </Route>
+      <Redirect from='/' to='/films'/>
+    </Switch>
+  )
+}
+export default App;

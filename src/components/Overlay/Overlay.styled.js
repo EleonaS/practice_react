@@ -15,11 +15,12 @@ background-color: gray;
 `;
 
 
-const Text = styled.p`
+/*const Text = styled.p`
 width: 700px;
 padding:30px;
 background-color: #fff;
 `;
+*/
 
 const Label = styled.span`
   display: block;
@@ -32,4 +33,4 @@ const Label = styled.span`
   cursor: pointer;
 `
 
-export {StyledOverlay,Text, Label};
+export {StyledOverlay,Label};
